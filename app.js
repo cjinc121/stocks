@@ -2,7 +2,9 @@ var inp=document.querySelectorAll(".number");
 var button=document.querySelector(".btn");
 var output=document.querySelector(".msg");
 button.addEventListener("click",()=>{
-  if(Number(inp[0].value)<Number(inp[2].value))
+  if(Number(inp[0].value)>=0 && Number(inp[2].value)>=0 &&Number(inp[1].value)>=0)
+  {
+    if(Number(inp[0].value)<Number(inp[2].value))
   {
     var profit=Number(inp[1].value)*(Number(inp[2].value)-Number(inp[0].value));
     var perc=(profit/(Number(inp[0].value)*Number(inp[1].value)))*100;
@@ -22,5 +24,9 @@ output.innerText=`Whoops!! Your loss is ${loss.toFixed(
   }
   else{
     output.innerText="NO LOSS NO PROFIT";
+  }
+  }
+  else{
+    output.innerText="INVALID INPUT";
   }
 })
